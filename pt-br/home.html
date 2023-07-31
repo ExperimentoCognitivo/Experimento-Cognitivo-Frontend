@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Experimento</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href='../assets/css/poppins-css.css' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="title-area">
+                    <h2>Termo de consentimento livre e esclarecido</h2>
+                    <p class="description">Este é um convite para você participar da pesquisa: <b>COGNITIVE PROCESSING
+                            OF
+                            FINANCIAL INFORMATION: What's The Rush?</b>, que tem como pesquisador responsável José Mauro
+                        Madeiros Velôso Soares, orientado pelo Prof. Dr. Cristiano Machado Costa. </p>
+                    <p class="description">Esta pesquisa pretende verificar como as informações financeiras são
+                        processadas visualmente. Caso você decida participar, você deverá responder as tarefas a seguir.
+                        Primeiro, você deve aceitar participar da pesquisa, escolher o idioma e realizar a leitura de um
+                        trecho de uma informação financeira. A pesquisa tem duração estimada de dez minutos para que
+                        seja concluída por você. Para participar, você deve abrir a tarefa em um computador com webcam.
+                        Não haverá qualquer gravação de imagem, a webcam é utilizada como um dispositivo de rastreamento
+                        ocular. Portanto, é criado apenas um mapa das fixações do olhar, e não há captura da imagem na
+                        tela.</p>
+                    <p>Durante todo o período da pesquisa você poderá tirar suas dúvidas por meio do e-mail
+                        <b><a href="mailto:jmauro@edu.unisinos.br" target="_blank">jmauro@edu.unisinos.br</a></b>. Você
+                        tem o direito de
+                        se recusar a participar
+                        ou retirar seu
+                        consentimento, em qualquer fase da pesquisa, sem nenhum prejuízo para você. Os riscos envolvidos
+                        nesta pesquisa são mínimos, sendo identificado apenas aqueles inerentes a responder
+                        questionários, como o cansaço ou aborrecimento do participante. Para contornar este risco, em
+                        qualquer etapa o participante pode desistir simplesmente fechando a aba do navegador. Os dados
+                        que você irá nos fornecer serão confidenciais e serão divulgados como resultados da pesquisa
+                        apenas em congressos ou publicações científicas, não havendo divulgação de nenhum dado que possa
+                        lhe identificar.
+                    </p>
+                    <p>
+                        Esses dados serão guardados pelo pesquisador responsável por essa pesquisa em local seguro e por
+                        um período de 5 anos.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-icon">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Eu li e concordo com o termo de consentimento.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-icon">
+                        <div class="button-get-started">
+                            <a href="instrucao.html" disabled="true" class="btn btn-danger btn-fill btn-lg"
+                                id="btn-iniciar">Iniciar pesquisa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <footer class="footer footer-big footer-color-black" data-color="black">
+        <div class="container">
+            <div class="copyright">
+                ©
+                <script> document.write(new Date().getFullYear()) </script> Criado por Frederico Sampaio
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.js" type="text/javascript"></script>
+<script type="text/javascript" src="../assets/js/modernizr.js"></script>
+<script type="text/javascript" src="../assets/js/core.js"></script>
+<script>
+    const checkbox = document.getElementById('flexCheckDefault');
+    const btnStart = document.getElementById('btn-iniciar');
+    checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+            btnStart.removeAttribute("disabled");
+        } else {
+            btnStart.setAttribute("disabled", "true");
+        }
+    })
+
+    window.location.hash = "no-back-button";
+
+    // Again because Google Chrome doesn't insert
+    // the first hash into the history
+    window.location.hash = "Again-No-back-button";
+
+    window.onhashchange = function () {
+        window.location.hash = "no-back-button";
+    }
+
+    setTimeout(() => {
+        window.location.hash = "no-back-button";
+
+        // Again because Google Chrome doesn't insert
+        // the first hash into the history
+        window.location.hash = "Again-No-back-button";
+
+        window.onhashchange = function () {
+            window.location.hash = "no-back-button";
+        }
+    }, 2000);
+</script>
+
+</html>

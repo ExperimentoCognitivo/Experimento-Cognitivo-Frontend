@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Experimento</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href='../assets/css/poppins-css.css' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/fonts/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="title-area">
+                    <h2>Questions</h2>
+                    <br />
+                    <div class="mb-3">
+                        <label for="genero-label" class="form-label">1 - Do you remember how many virtual stores in
+                            Companhia Beta had in 2019? If you don't remember, assign an approximate value.</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="lojas-virtuais-range" value="0"
+                            oninput="attributeValueToInput(this.value,0)"
+                            onchange="attributeValueToInput(this.value,0)">
+                        <input type="number" style="width: 8%;" id="lojas-virtuais-input" value="0"
+                            oninput="attributeValueToRange(this.value,0)"
+                            onchange="attributeValueToRange(this.value,0)">
+                    </div>
+
+                    <br />
+
+                    <div class="mb-3">
+                        <label for="genero-label" class="form-label">2 - Do you remember the gross revenue was for
+                            2019(in billions)?
+                            If you don't remember, assign an approximate value.</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="receita-bruta-range" value="0"
+                            oninput="attributeValueToInput(this.value,1)"
+                            onchange="attributeValueToInput(this.value,1)">
+                        <input type="number" style="width: 8%;" id="receita-bruta-input" value="0"
+                            oninput="attributeValueToRange(this.value,1)"
+                            onchange="attributeValueToRange(this.value,1)">
+                    </div>
+
+                    <br />
+
+                    <div class="mb-3">
+                        <label for="genero-label" class="form-label">3 - Do you remember the change in gross profit in
+                            2019(in billions)? If you don't remember, assign an approximate value.</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="variacao-lucro-range" value="0"
+                            oninput="attributeValueToInput(this.value,2)"
+                            onchange="attributeValueToInput(this.value,2)">
+                        <input type="number" style="width: 8%;" id="variacao-lucro-input" value="0"
+                            oninput="attributeValueToRange(this.value,2)"
+                            onchange="attributeValueToRange(this.value,2)">
+                    </div>
+
+                    <br />
+
+                    <div class="mb-3">
+                        <label for="genero-label" class="form-label">4 - Do you remember what the net income was for
+                            2019(in millions)? If you don't remember, assign an approximate value.</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="resultado-liquido-range" value="0"
+                            oninput="attributeValueToInput(this.value,3)"
+                            onchange="attributeValueToInput(this.value,3)">
+                        <input type="number" style="width: 8%;" id="resultado-liquido-input" value="0"
+                            oninput="attributeValueToRange(this.value,3)"
+                            onchange="attributeValueToRange(this.value,3)">
+                    </div>
+
+                    <br />
+
+                    <div class="mb-3">
+                        <label for="genero-label" class="form-label">5 - Do you remember the change in net income was
+                            for 2019(in %)? If you don't remember, assign an approximate value.</label>
+                        <input type="range" class="form-range" min="0" max="1000" id="mudanca-resultado-range" value="0"
+                            oninput="attributeValueToInput(this.value,4)"
+                            onchange="attributeValueToInput(this.value,4)">
+                        <input type="number" style="width: 8%;" id="mudanca-resultado-input" value="0"
+                            oninput="attributeValueToRange(this.value,4)"
+                            onchange="attributeValueToRange(this.value,4)">
+                    </div>
+
+                    <br />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-icon">
+                        <div class="button-get-started">
+                            <a href="javascript:void(0);" onclick="sendForm(this)"
+                                class="btn btn-danger btn-fill btn-lg">Continue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-big footer-color-black" data-color="black">
+        <div class="container">
+            <div class="copyright">
+                ©
+                <script> document.write(new Date().getFullYear()) </script> Created by Frederico Sampaio
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="../assets/js/modernizr.js"></script>
+<script type="text/javascript" src="../assets/js/core.js"></script>
+<script src="../assets/js/fastest-validator.min.js"></script>
+<script>
+    const input1 = document.getElementById('lojas-virtuais-input');
+    const input2 = document.getElementById('receita-bruta-input');
+    const input3 = document.getElementById('variacao-lucro-input');
+    const input4 = document.getElementById('resultado-liquido-input');
+    const input5 = document.getElementById('mudanca-resultado-input');
+
+    const range1 = document.getElementById('lojas-virtuais-range');
+    const range2 = document.getElementById('receita-bruta-range');
+    const range3 = document.getElementById('variacao-lucro-range');
+    const range4 = document.getElementById('resultado-liquido-range');
+    const range5 = document.getElementById('mudanca-resultado-range');
+
+    const inputs = [input1, input2, input3, input4, input5];
+    const ranges = [range1, range2, range3, range4, range5];
+
+    function attributeValueToInput(value, index) {
+        inputs[index].value = value;
+    }
+
+    function attributeValueToRange(value, index) {
+        ranges[index].value = value;
+    }
+
+    const BASE_URL = "https://experimento-cognitivo-service.herokuapp.com";
+    const validator = new FastestValidator();
+
+    const schema = {
+        first: { type: "number", integer: true },
+        second: { type: "number", integer: true },
+        third: { type: "number", integer: true },
+        fourth: { type: "number", integer: true },
+        fifth: { type: "number", integer: true }
+    };
+
+    const check = validator.compile(schema);
+
+    function getAndValidForm(element) {
+        const first = parseInt(input1.value);
+        const second = parseInt(input2.value);
+        const third = parseInt(input3.value);
+        const fourth = parseInt(input4.value);
+        const fifth = parseInt(input5.value);
+        const isValid = check({ first, second, third, fourth, fifth });
+        if (isValid === true) {
+            return { first, second, third, fourth, fifth }
+        } else {
+            alert("Please check and fill in all fields.");
+            element.removeAttribute("disabled");
+            element.innerText = "Continue";
+            throw "Invalid Form";
+        }
+    }
+
+    function getRadioValue(selector) {
+        const fields = document.querySelectorAll(selector);
+        return (Array.from(fields).find(field => field.checked)).value;
+    }
+
+    async function sendForm(element) {
+        try {
+            element.setAttribute("disabled", "true");
+            element.innerText = "Waiting...";
+            const bodyForm = getAndValidForm(element);
+            const id = localStorage.getItem("userId");
+            const response = await fetch(`${BASE_URL}/v1/experiment/questions-1/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "Application/json" },
+                body: JSON.stringify(bodyForm)
+            });
+            if (response.status === 204) {
+                window.location.href = `questions2.html`;
+            } else {
+                setTimeout(async () => {
+                    await sendForm(element);
+                }, 5000);
+            }
+        } catch (err) {
+            console.log(err);
+            alert("Error sending data, please try again");
+            element.removeAttribute("disabled");
+            element.innerText = "Continue";
+        }
+    }
+
+
+    window.location.hash = "no-back-button";
+
+    // Again because Google Chrome doesn't insert
+    // the first hash into the history
+    window.location.hash = "Again-No-back-button";
+
+    window.onhashchange = function () {
+        window.location.hash = "no-back-button";
+    }
+
+    setTimeout(() => {
+        window.location.hash = "no-back-button";
+
+        // Again because Google Chrome doesn't insert
+        // the first hash into the history
+        window.location.hash = "Again-No-back-button";
+
+        window.onhashchange = function () {
+            window.location.hash = "no-back-button";
+        }
+    }, 2000);
+
+</script>
+
+</html>
